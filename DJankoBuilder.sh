@@ -2510,6 +2510,31 @@ Template Sources:
 
 CODE
 
+
+
+
+    echo "---"
+    echo "SETUP COMPLETE! The following files are ready:"
+    echo "* $PYTHON_SCRIPT_NAME (The executable builder)"
+    echo "* $CONFIG_FILE_NAME (Your project definition)"
+    echo "* $TEMPLATE_DIR/ (Your HTML source folder with professional templates)"
+    echo "---"
+    echo "AVAILABLE COMMANDS:"
+    echo "  Build project:        python3 $PYTHON_SCRIPT_NAME"
+    echo "  List templates:       python3 $PYTHON_SCRIPT_NAME --list-templates"
+    echo "  Browse/Download templates:       python3 $PYTHON_SCRIPT_NAME --browse-templates"
+    echo "  Browse/Download templates:       python3 $PYTHON_SCRIPT_NAME --symlink"
+    echo "  Browse/Download templates:       python3 $PYTHON_SCRIPT_NAME --develop"
+
+    echo "  Validate templates:   python3 $PYTHON_SCRIPT_NAME --validate"
+    echo "  Get help:            python3 $PYTHON_SCRIPT_NAME --help"
+    echo "---"
+    echo "CUSTOMIZATION:"
+    echo "1. Edit HTML files in $TEMPLATE_DIR/"
+    echo "2. Update project settings in $CONFIG_FILE_NAME"
+    echo "3. Run the builder to regenerate your project"
+}
+
 cat > template_sources.json << 'EOF'
 {
   "categories": {
@@ -3689,30 +3714,6 @@ if __name__ == "__main__":
     # Test the integration
     add_template_browser_option()
 EOF
-
-
-    echo "---"
-    echo "SETUP COMPLETE! The following files are ready:"
-    echo "* $PYTHON_SCRIPT_NAME (The executable builder)"
-    echo "* $CONFIG_FILE_NAME (Your project definition)"
-    echo "* $TEMPLATE_DIR/ (Your HTML source folder with professional templates)"
-    echo "---"
-    echo "AVAILABLE COMMANDS:"
-    echo "  Build project:        python3 $PYTHON_SCRIPT_NAME"
-    echo "  List templates:       python3 $PYTHON_SCRIPT_NAME --list-templates"
-    echo "  Browse/Download templates:       python3 $PYTHON_SCRIPT_NAME --browse-templates"
-    echo "  Browse/Download templates:       python3 $PYTHON_SCRIPT_NAME --symlink"
-    echo "  Browse/Download templates:       python3 $PYTHON_SCRIPT_NAME --develop"
-
-    echo "  Validate templates:   python3 $PYTHON_SCRIPT_NAME --validate"
-    echo "  Get help:            python3 $PYTHON_SCRIPT_NAME --help"
-    echo "---"
-    echo "CUSTOMIZATION:"
-    echo "1. Edit HTML files in $TEMPLATE_DIR/"
-    echo "2. Update project settings in $CONFIG_FILE_NAME"
-    echo "3. Run the builder to regenerate your project"
-}
-
 # --- Execution ---
 pip install beautifulsoup4 requests
 check_dependencies
